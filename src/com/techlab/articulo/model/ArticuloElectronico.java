@@ -1,0 +1,38 @@
+package com.techlab.articulo.model;
+
+public class ArticuloElectronico extends Articulo {
+
+    private int garantiaMeses; 
+
+    public ArticuloElectronico(int codigo, String nombre, double precio, Categoria categoria, int garantiaMeses){
+        super(codigo, nombre, precio, categoria);
+        this.garantiaMeses = garantiaMeses;
+    }
+
+    public int getGarantiaMeses(){
+        return this.garantiaMeses;
+    }
+
+    public void setGarantiaMeses(int garantiaMeses){
+        this.garantiaMeses = garantiaMeses;
+    }
+
+    @Override 
+    public String getTipoArticulo(){
+        return "Electronico";
+    }
+
+    @Override 
+    public String getDetalleEspecifico(){
+        return "Meses De Garantia: " + this.getGarantiaMeses();
+    }
+
+    public String nroTelMesaDeAyudaParaReclamos(){
+        return "0800-123-4567";
+    }
+
+    @Override 
+    public String toString(){
+        return super.toString() + " [subtipo electronico]";
+    }
+}
